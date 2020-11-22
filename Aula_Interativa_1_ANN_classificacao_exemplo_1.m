@@ -1,3 +1,4 @@
+% Aula_Interativa_1_ANN_classificacao_exemplo_1.m
 clear all; close all;
 % -------------------------------------------------------------------------
 % ---  0) Objetivo: Rede Neural, Classificação Sim/Não, Com 1 neuronio ----
@@ -43,17 +44,17 @@ subplot(2,2,1);
         y1 = [input_data']*IW;
         plot(index_0,y1(index_0),'ro'); hold on;
         plot(index_1,y1(index_1),'bo'); hold on; grid on;
-hfg = gca;  setLabels(hfg,18,20,'amostras',''); title('Com viés');
+hfg = gca;  setLabels(hfg,18,20,'amostras','y_1'); title('Com viés');
 subplot(2,2,2);
         y2 = y1+b;
         plot(index_0,y2(index_0),'ro'); hold on;
         plot(index_1,y2(index_1),'bo'); hold on; grid on;
-hfg = gca;  setLabels(hfg,18,20,'amostras',''); title('Sem viés');
+hfg = gca;  setLabels(hfg,18,20,'amostras','y_2'); title('Sem viés');
 subplot(2,2,3);
         y3  = hardlim(y2);
         plot(index_0,y3(index_0),'ro'); hold on;
         plot(index_1,y3(index_1),'bo'); hold on; grid on;
-hfg = gca;  setLabels(hfg,18,20,'amostras','');  title('Classificação');
+hfg = gca;  setLabels(hfg,18,20,'amostras','y_3');  title('Classificação');
 end
 % -------------------------------------------------------------------------
 % ---  Caso [2]: Obtendo a Resposta da Rede:  IW = [1;1], b = -1    -------
@@ -79,17 +80,17 @@ subplot(2,2,1);
         y1 = [input_data']*IW;
         plot(index_0,y1(index_0),'ro'); hold on;
         plot(index_1,y1(index_1),'bo'); hold on; grid on;
-hfg = gca;  setLabels(hfg,18,20,'amostras',''); title('Com viés');
+hfg = gca;  setLabels(hfg,18,20,'amostras','y_1'); title('Com viés');
 subplot(2,2,2);
         y2 = y1+b;
         plot(index_0,y2(index_0),'ro'); hold on;
         plot(index_1,y2(index_1),'bo'); hold on; grid on;
-hfg = gca;  setLabels(hfg,18,20,'amostras',''); title('Sem viés');
+hfg = gca;  setLabels(hfg,18,20,'amostras','y_2'); title('Sem viés');
 subplot(2,2,3);
         y3  = hardlim(y2);
         plot(index_0,y3(index_0),'ro'); hold on;
         plot(index_1,y3(index_1),'bo'); hold on; grid on;
-hfg = gca;  setLabels(hfg,18,20,'amostras','');  title('Classificação');
+hfg = gca;  setLabels(hfg,18,20,'amostras','y_3');  title('Classificação');
 end
 % -------------------------------------------------------------------------
 % ---  Caso [3]: Obtendo a Resposta da Rede:  IW = [5.35;5.35], b = -8    -
@@ -115,17 +116,17 @@ subplot(2,2,1);
         y1 = [input_data']*IW;
         plot(index_0,y1(index_0),'ro'); hold on;
         plot(index_1,y1(index_1),'bo'); hold on; grid on;
-hfg = gca;  setLabels(hfg,18,20,'amostras',''); title('Com viés');
+hfg = gca;  setLabels(hfg,18,20,'amostras','y_1'); title('Com viés');
 subplot(2,2,2);
         y2 = y1+b;
         plot(index_0,y2(index_0),'ro'); hold on;
         plot(index_1,y2(index_1),'bo'); hold on; grid on;
-hfg = gca;  setLabels(hfg,18,20,'amostras',''); title('Sem viés');
+hfg = gca;  setLabels(hfg,18,20,'amostras','y_2'); title('Sem viés');
 subplot(2,2,3);
         y3  = hardlim(y2);
         plot(index_0,y3(index_0),'ro'); hold on;
         plot(index_1,y3(index_1),'bo'); hold on; grid on;
-hfg = gca;  setLabels(hfg,18,20,'amostras','');  title('Classificação');
+hfg = gca;  setLabels(hfg,18,20,'amostras','y_3');  title('Classificação');
 end
 % -------------------------------------------------------------------------
 
