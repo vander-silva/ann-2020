@@ -1,5 +1,5 @@
 %% ---<(0) Aula Redes Neurais EELT7019 - Nov/2019   >----------------------
-clear all;
+clear all; close all;
 impressoes = 1;
 %% ---<(1) Carregar as imagens para treinamento >--------------------------
 filename = 'train-images.idx3-ubyte' %% 60 mil imagens 784x60000
@@ -79,8 +79,8 @@ for k = 1:length(Labels_Test_10k)
     Targets_Test_10k(:,k)= index2vector(Labels_Test_10k(1,k)+1,10);
 end
 clear k;
-%myfun
-
+%% ---<(13) Projetar a Rede Neural   >--------------------------------------
+nnstart
 [Saida_ANN] = myfun(Imagens_Test_10k(:,:));
  for k = 1:size(Saida_ANN,2)
     Labels_Saida_ANN(k) = find(  Saida_ANN(:,k) == max(Saida_ANN(:,k))  ) - 1;
