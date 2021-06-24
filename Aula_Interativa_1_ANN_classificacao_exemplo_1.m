@@ -1,11 +1,11 @@
 % Aula_Interativa_1_ANN_classificacao_exemplo_1.m
 clear all; close all;
 % -------------------------------------------------------------------------
-% ---  0) Objetivo: Rede Neural, Classificação Sim/Não, Com 1 neuronio ----
+% ---  0) Objetivo: Rede Neural, ClassificaÃ§Ã£o Sim/NÃ£o, Com 1 neuronio ----
 % -------------------------------------------------------------------------
 caso_1 = 1; % Rede:  IW = [5.40;5.03], b = -8
-caso_2 = 0; % Rede:  IW = [1;1],       b = -1
-caso_3 = 0; % Rede:  IW = [5.35;5.35], b = -8
+caso_2 = 1; % Rede:  IW = [1;1],       b = -1
+caso_3 = 1; % Rede:  IW = [5.35;5.35], b = -8
 %
 % -------------------------------------------------------------------------
 % ---  1) Obtendo um DATASET  ---------------------------------------------
@@ -129,4 +129,3 @@ subplot(2,2,3);
 hfg = gca;  setLabels(hfg,18,20,'amostras','y_3');  title('Classificação');
 end
 % -------------------------------------------------------------------------
-
