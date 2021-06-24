@@ -1,0 +1,35 @@
+% -------------------------------------------------------------------------
+%     Aula_Demonstrativa_ANN_2.m (Patter Recognition - Mnist)
+%     Vanderlei A. Silva - Junho/2021
+% -------------------------------------------------------------------------
+%% ---<(13) Projetar a Rede Neural   >--------------------------------------
+nnstart
+[Saida_ANN] = myfun(Imagens_Test_10k(:,:));
+ for k = 1:size(Saida_ANN,2)
+    Labels_Saida_ANN(k) = find(  Saida_ANN(:,k) == max(Saida_ANN(:,k))  ) - 1;
+ end
+clear k Label_Teste_Saida
+% y_class, t_class
+
+%% ---<(14) Imprimir resultados para verificação  >------------------------
+for indices = 1:100
+    if y_class(indices) == t_class(indices)
+       str = sprintf('[%d],  Alvo: %d,  Saida: %d,   [OK]\n',indices,t_class(indices),y_class(indices));
+       imshowann(Imagens_Teste_8k, Targets_Teste_8k, Labels_Saida_ANN, str,indices);       
+    else
+       str = sprintf('[%d],  Alvo: %d,  Saida: %d,   [ERRO]\n',indices,t_class(indices),y_class(indices));
+       imshowann(Imagens_Teste_8k, Targets_Teste_8k, Labels_Saida_ANN, str,indices,'yellow');   pause(3);    
+    end
+end
+clear indices str
+
+%% ---<(15) Indices Errados                   >----------------------------
+indices_errados = find(Labels_Saida_ANN ~= Labels_Test_10k);
+for indices = indices_errados
+   %imshowann(Imagens_Test_10k(:,amostras),Label_Teste_Saida(indices))
+   str = sprintf('[%d],  Alvo: %d,  Saida: %d,   [ERRO]\n',indices,Labels_Test_10k(indices),Labels_Saida_ANN(indices));
+   imshowann(Imagens_Test_10k, Labels_Test_10k, Labels_Saida_ANN, str,indices,'yellow');   pause(3); 
+end
+clear indices str
+
+
