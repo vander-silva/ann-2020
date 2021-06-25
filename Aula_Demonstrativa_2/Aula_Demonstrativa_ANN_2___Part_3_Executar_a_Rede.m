@@ -1,5 +1,5 @@
 % -------------------------------------------------------------------------
-%     Aula_Demonstrativa_ANN_2.m (Patter Recognition - Mnist)
+%     Aula_Demonstrativa_ANN_2___Parte3_Executar_a_Rede.m (Mnist)
 %     Vanderlei A. Silva - Junho/2021
 % -------------------------------------------------------------------------
 %% ---<(13) Executar a Rede para DataSet de Testes  >----------------------
@@ -31,3 +31,4 @@ clear indices str
 % filename = 'rede_784_40_10_resultados.mat';
 % save(filename);
 
+% FIM
