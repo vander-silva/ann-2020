@@ -1,5 +1,5 @@
 % -------------------------------------------------------------------------
-%     Aula_Demonstrativa_ANN_1__Classificacao_Exemplo_1.m
+%     Aula_Demonstrativa_ANN_2__Part_2_Projetar_a_Rede.m
 %     Vanderlei A. Silva - Junho/2021
 % -------------------------------------------------------------------------
 % clear all; clc;
