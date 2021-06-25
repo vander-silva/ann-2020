@@ -1,8 +1,8 @@
 % -------------------------------------------------------------------------
-%     Aula_Demonstrativa_ANN_2.m (Patter Recognition - Mnist)
+%     Aula_Demonstrativa_ANN_2__Part_1_Carregar_DataSet.m (Mnist, Patt.Recog)
 %     Vanderlei A. Silva - Junho/2021
 % -------------------------------------------------------------------------
-% clear all;  impressoes = 0; close all;
+clear all;  impressoes = 0; close all;
 %% ---<(1) Carregar DataSet treinamento >----------------------------------
 % IMAGENS
 filename = 'train-images.idx3-ubyte' %% 60 mil imagens 784x60000
@@ -40,7 +40,7 @@ stem([0:9],amostras_por_classe,'filled'); hold on; grid on;
 line([-2 10],[6000 6000],'Color','b');
 clear n amostras_por_classe;
 
-%% ---<(5) Igualar a distribuição das classes e Reduzir amostras    >------
+%% ---<(5) Igualar a distribuição das classes e Reduzir e Embaralhar amostras >------
 L_train_por_class = 2000;
 L_valid_por_class = 1000;
 L_teste_por_class =  800;
@@ -85,38 +85,32 @@ indices = randi(length(Labels_Teste_8k),[1 10]); % criacao indices aleatorios
 imshowann(Imagens_Teste_8k,Labels_Teste_8k,-1,'Data Set Teste Equalizado',indices); clear indices
 end
 %% ---<(7) Verificar a distribuição nas classes de cada dataset  >---------
-
 % DATASET DE TREINAMENTO -------------------------------
-figure(3); subplot(2,2,1);
 for n = 0:9
  amostras_por_classe(n+1) = length(find(Labels_Treinamento_20k(1,:) == n));
 end
 hfg = figure(3);
-plot([0:9],amostras_por_classe); hold on;
+subplot(2,2,1); plot([0:9],amostras_por_classe); hold on;
 stem([0:9],amostras_por_classe,'filled'); hold on; grid on;
 line([-0.5 10],[3000 3000],'Color','k');
 hfg.ToolBar = 'none';
 clear n amostras_por_classe;
-
 % DATASET DE VALIDACAO ----------------------------------
-subplot(2,2,2);
 for n = 0:9
  amostras_por_classe(n+1) = length(find(Labels_Validacao_10k(1,:) == n));
 end
 hfg = figure(3);
-plot([0:9],amostras_por_classe); hold on;
+subplot(2,2,2); plot([0:9],amostras_por_classe); hold on;
 stem([0:9],amostras_por_classe,'filled'); hold on; grid on;
 line([-0.5 10],[1500 1500],'Color','k');
 hfg.ToolBar = 'none';
 clear n amostras_por_classe;
-
 % DATASET DE TESTE -------------------------------------
-subplot(2,2,3);
 for n = 0:9
  amostras_por_classe(n+1) = length(find(Labels_Teste_8k(1,:) == n));
 end
 hfg = figure(3);
-plot([0:9],amostras_por_classe); hold on;
+subplot(2,2,3); plot([0:9],amostras_por_classe); hold on;
 stem([0:9],amostras_por_classe,'filled'); hold on; grid on;
 line([-0.5 10],[1000 1000],'Color','k');
 hfg.ToolBar = 'none';
